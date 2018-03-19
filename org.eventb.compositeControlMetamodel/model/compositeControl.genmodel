@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014,2016 University of Southampton.&#xD;All rights reserved. This program and the accompanying materials  are made&#xD;available under the terms of the Eclipse Public License v1.0 which accompanies this &#xD;distribution, and is available at http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/org.eventb.compositeControlMetamodel/src" modelPluginID="org.eventb.compositeControlMetamodel"
+    modelName="CompositeControl" importerID="org.eclipse.emf.importer.ecore" containmentProxies="true"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eventb.emf.core/model/eventbcore.genmodel#//core"
+    classNamePattern="">
+  <foreignModel>compositeControl.ecore</foreignModel>
+  <genPackages prefix="CompositeControl" disposableProviderFactory="true" extensibleProviderFactory="true"
+      childCreationExtenders="true" ecorePackage="compositeControl.ecore#/">
+    <genClasses image="false" ecoreClass="compositeControl.ecore#//CompositeControl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compositeControl.ecore#//CompositeControl/envirStateMachineChild"/>
+    </genClasses>
+    <genClasses ecoreClass="compositeControl.ecore#//Seq">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compositeControl.ecore#//Seq/leftBranch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compositeControl.ecore#//Seq/rightBranch"/>
+    </genClasses>
+    <genClasses ecoreClass="compositeControl.ecore#//Do">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compositeControl.ecore#//Do/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compositeControl.ecore#//Do/taskBody"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compositeControl.ecore#//Do/finally"/>
+    </genClasses>
+    <genClasses ecoreClass="compositeControl.ecore#//Branch">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compositeControl.ecore#//Branch/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compositeControl.ecore#//Branch/eventWrapper"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compositeControl.ecore#//Branch/subBranch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compositeControl.ecore#//Branch/alt"/>
+    </genClasses>
+    <genClasses ecoreClass="compositeControl.ecore#//SubBranch">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compositeControl.ecore#//SubBranch/eventWrapper"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compositeControl.ecore#//SubBranch/subBranch"/>
+    </genClasses>
+    <genClasses ecoreClass="compositeControl.ecore#//EventWrapper">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compositeControl.ecore#//EventWrapper/label"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference compositeControl.ecore#//EventWrapper/event"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compositeControl.ecore#//EventWrapper/eventName"/>
+    </genClasses>
+    <genClasses ecoreClass="compositeControl.ecore#//Output">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compositeControl.ecore#//Output/text"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference compositeControl.ecore#//Output/element"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compositeControl.ecore#//Output/variableName"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

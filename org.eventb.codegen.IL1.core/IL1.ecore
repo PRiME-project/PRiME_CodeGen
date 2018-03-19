@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="il1"
+    nsURI="http://il1/1.0" nsPrefix="il1">
+  <eClassifiers xsi:type="ecore:EClass" name="Declaration" abstract="true" eSuperTypes="#//IL1Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ProjectName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ComponentName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDecl" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="address" eType="#//RequiredFormula/AddressedDeclaration"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstantDecl" eSuperTypes="#//Declaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FormalParamDecl" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" lowerBound="1" eType="#//ParamModeEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CallTarget" eSuperTypes="#//Signature"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Protected" eSuperTypes="#//RequiredFormula/DataType #//CallTarget">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subroutines" upperBound="-1"
+        eType="#//Subroutine" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decls" upperBound="-1"
+        eType="#//Declaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="machineName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="#//CodeContainer #//RequiredFormula/DataType #//CallTarget">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="taskType" lowerBound="1"
+        eType="#//TaskType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="5"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decls" upperBound="-1"
+        eType="#//Declaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subroutines" upperBound="-1"
+        eType="#//Subroutine" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="machineName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeContainer" abstract="true" eSuperTypes="#//IL1Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Command"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Program" eSuperTypes="#//Signature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decls" upperBound="-1"
+        eType="#//Declaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="protected" upperBound="-1"
+        eType="#//Protected" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entryPoint" eType="#//MainEntry"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="taskTypeTasks" upperBound="-1"
+        eType="#//Task" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subroutines" upperBound="-1"
+        eType="#//Subroutine" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="environMachines" upperBound="-1"
+        eType="#//EnvironTask" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MainEntry" eSuperTypes="#//CodeContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="autoTasks" upperBound="-1"
+        eType="#//Task" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Subroutine" eSuperTypes="#//CodeContainer #//Signature #//RequiredMetadata/SubroutineMetaData">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formalParameters" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="localDeclarations" upperBound="-1"
+        eType="#//Declaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="machineName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guards" upperBound="-1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Command" abstract="true" eSuperTypes="#//CodeContainer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ParentEventName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="envirStateMachineChild"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PreconditionLoop" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="command" lowerBound="1"
+        eType="#//Command" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" upperBound="-1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Seq" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftBranch" lowerBound="1"
+        eType="#//Command" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightBranch" lowerBound="1"
+        eType="#//Command" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="command" lowerBound="1"
+        eType="#//Command" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="updated" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Switch" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switchBlocks" lowerBound="1"
+        upperBound="-1" eType="#//SwitchBlock" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Call" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//CallTarget"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subroutine" lowerBound="1"
+        eType="#//Subroutine" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actualParameters" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="machineName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="branch" eType="#//ElseIf"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="else" eType="#//Command"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedEvent" eType="ecore:EClass ../org.eventb.emf.core/model/eventbcore.ecore#//machine/Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElseIf" eSuperTypes="#//IL1Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" upperBound="-1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Command"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="branch" eType="#//ElseIf"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedEvent" eType="ecore:EClass ../org.eventb.emf.core/model/eventbcore.ecore#//machine/Event"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="envirStateMachineChild"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SwitchBlock" eSuperTypes="#//IL1Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="test" lowerBound="1" eType="#//ConstantDecl"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
+        eType="#//Command" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Signature" abstract="true" eSuperTypes="#//IL1Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskType" abstract="true" eSuperTypes="#//IL1Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleTaskType" eSuperTypes="#//TaskType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//TaskTypeEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnvironTask" eSuperTypes="#//Task"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PeriodicTaskType" eSuperTypes="#//TaskType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TaskTypeEnum">
+    <eLiterals name="Repeating" value="1"/>
+    <eLiterals name="Triggered" value="2"/>
+    <eLiterals name="OneShot" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VariableTypeEnum">
+    <eLiterals name="Variable"/>
+    <eLiterals name="Parameter" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ParamModeEnum">
+    <eLiterals name="in"/>
+    <eLiterals name="out" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Output" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="element" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IL1Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FormulaSet" eSuperTypes="#//IL1Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditions" upperBound="-1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionSet" eSuperTypes="#//FormulaSet"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CommandSet" eSuperTypes="#//FormulaSet"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalRemote" eSuperTypes="#//IL1Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="localSubroutine" eType="#//Subroutine"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="remoteSubroutine" eType="#//Subroutine"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InParameter" eSuperTypes="#//Parameter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OutParameter" eSuperTypes="#//Parameter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" abstract="true" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderNumber" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalVariable" eSuperTypes="#//Parameter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TranslatedDecl" abstract="true" eSuperTypes="#//IL1Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PartiallyTranslatedDecl" eSuperTypes="#//TranslatedDecl">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="partialInitialisationExpression"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FullyTranslatedDecl" eSuperTypes="#//TranslatedDecl">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullInitialisationExpression"
+        upperBound="-1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Enumeration" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literalValues" upperBound="-1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Case" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="caseExpression" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caseStatement" upperBound="-1"
+        eType="#//CaseStatement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CaseStatement" eSuperTypes="#//IL1Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="caseValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="command" eType="#//Command"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Skip" eSuperTypes="#//Command"/>
+  <eSubpackages name="RequiredFormula" nsURI="http://RequiredFormula.ecore" nsPrefix="RequiredFormula">
+    <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AddressedDeclaration">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberBase" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="DataTypeEnum">
+      <eLiterals name="UserSpecifiedDataType"/>
+      <eLiterals name="BooleanDataType" value="1"/>
+      <eLiterals name="IntegerDataType" value="2"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="RequiredMetadata" nsURI="http://RequiredMetadata.ecore" nsPrefix="RequiredMetadata">
+    <eClassifiers xsi:type="ecore:EClass" name="SubroutineMetaData">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="temporary" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

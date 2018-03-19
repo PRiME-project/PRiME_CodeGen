@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tasking" nsURI="http://tasking.ecore" nsPrefix="tasking">
+  <eClassifiers xsi:type="ecore:EClass" name="Main">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mainBody" eType="ecore:EClass ../../org.eventb.compositeControlMetamodel/model/compositeControl.ecore#//CompositeControl"
+        containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="machines" upperBound="-1"
+        eType="ecore:EClass ../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Machine"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" upperBound="-1"
+        eType="ecore:EClass ../../org.eventb.emf.core/model/eventbcore.ecore#//context/Context"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Task" abstract="true" eSuperTypes="#//AbstractExtensionTaskingElement #//MachineType">
+    <eAnnotations source="org.eventb.emf.core.extendedMetaClasses" references="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Machine ../../ac.soton.compositionmodel.core/model/compositionmodelcore.ecore#//ComposedMachine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="taskType" lowerBound="1"
+        eType="#//TaskType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="5"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="taskBody" lowerBound="1"
+        eType="ecore:EClass ../../org.eventb.compositeControlMetamodel/model/compositeControl.ecore#//CompositeControl"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AutoTask_Machine" eSuperTypes="#//Task">
+    <eAnnotations source="org.eventb.emf.core.extendedMetaClasses" references="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Machine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tasking_Machine" eSuperTypes="#//Task">
+    <eAnnotations source="org.eventb.emf.core.extendedMetaClasses" references="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Machine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Environ_Machine" eSuperTypes="#//Task">
+    <eAnnotations source="org.eventb.emf.core.extendedMetaClasses" references="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Machine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FMU_Machine" eSuperTypes="#//Task">
+    <eAnnotations source="org.eventb.emf.core.extendedMetaClasses" references="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Machine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Shared_Machine" eSuperTypes="#//AbstractExtensionTaskingElement #//MachineType">
+    <eAnnotations source="org.eventb.emf.core.extendedMetaClasses" references="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Machine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Implementation" eSuperTypes="#//AbstractExtensionTaskingElement">
+    <eAnnotations source="org.eventb.emf.core.extendedMetaClasses" references="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Event"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="implementationType" eType="#//ImplementationTypeEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterType" eSuperTypes="#//AbstractExtensionTaskingElement">
+    <eAnnotations source="org.eventb.emf.core.extendedMetaClasses" references="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Parameter"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameterType" lowerBound="1"
+        eType="#//ParameterTypeEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskType" abstract="true" eSuperTypes="#//EventBElementTaskingElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleTaskType" eSuperTypes="#//TaskType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//TaskTypeEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PeriodicTaskType" eSuperTypes="#//TaskType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true" eSuperTypes="#//AbstractExtensionTaskingElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddressedVariable" eSuperTypes="#//Sensor">
+    <eAnnotations source="org.eventb.emf.core.extendedMetaClasses" references="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Parameter ../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="base" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TaskTypeEnum">
+    <eLiterals name="Repeating" value="1"/>
+    <eLiterals name="Triggered" value="2"/>
+    <eLiterals name="OneShot" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ImplementationTypeEnum">
+    <eLiterals name="ProcedureDef" value="1"/>
+    <eLiterals name="ProcedureSynch" value="2"/>
+    <eLiterals name="Loop" value="3"/>
+    <eLiterals name="Branch" value="4"/>
+    <eLiterals name="Sensing" value="5"/>
+    <eLiterals name="Actuating" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ParameterTypeEnum">
+    <eLiterals name="in" literal="in"/>
+    <eLiterals name="out" value="1" literal="out"/>
+    <eLiterals name="local" value="2" literal="local"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskingElement" abstract="true" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractExtensionTaskingElement" abstract="true"
+      eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//AbstractExtension #//TaskingElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EventBElementTaskingElement" abstract="true"
+      eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBElement #//TaskingElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MachineType" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Typing" eSuperTypes="#//AbstractExtensionTaskingElement">
+    <eAnnotations source="org.eventb.emf.core.extendedMetaClasses" references="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Invariant ../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Guard ../../org.eventb.emf.core/model/eventbcore.ecore#//context/Axiom"/>
+  </eClassifiers>
+</ecore:EPackage>

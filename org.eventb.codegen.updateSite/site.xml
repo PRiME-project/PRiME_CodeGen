@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eventb.codegen.feature_0.3.0.release.jar" id="org.eventb.codegen.feature" version="0.3.0.release">
+      <category name="PRiME"/>
+   </feature>
+   <category-def name="PRiME" label="PRiME"/>
+</site>

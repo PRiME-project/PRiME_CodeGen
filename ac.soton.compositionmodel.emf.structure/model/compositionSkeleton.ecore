@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="compositionStructure"
+    nsURI="http://compositionStructure/1.0" nsPrefix="compositionStructure">
+  <eClassifiers xsi:type="ecore:EClass" name="CompositionStructure">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composedMachine" lowerBound="1"
+        eType="ecore:EClass ../../ac.soton.compositionmodel.core/model/compositionmodelcore.ecore#//ComposedMachine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="immediateAncestorCmposedMchs"
+        upperBound="-1" eType="#//CompositionStructure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="immediateDescendantCmposedMchs"
+        upperBound="-1" eType="#//CompositionStructure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leafComposedEvents" upperBound="-1"
+        eType="#//LeafComposedEvent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LeafComposedEvent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" upperBound="-1"
+        eType="ecore:EClass ../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Event"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composedLeafEvents" upperBound="-1"
+        eType="#//LeafEvent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LeafEvent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="machine" eType="ecore:EClass ../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Machine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="ecore:EClass ../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Event"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="machineName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://tasking.ecore"
+            class="tasking.provider.TaskingItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <extender
+            uri="http://emf.eventb.org/models/core/machine/2014"
+            class="tasking.provider.TaskingItemProviderAdapterFactory$CoreChildCreationExtender"/>
+      <extender
+            class="tasking.provider.TaskingItemProviderAdapterFactory$CoreChildCreationExtender"
+            uri="http://compositionmodel.soton.ac/models/core">
+      </extender>
+      <extender
+            class="tasking.provider.TaskingItemProviderAdapterFactory$CoreChildCreationExtender"
+            uri="http://emf.eventb.org/models/core/context/2014">
+      </extender>
+   </extension>
+
+</plugin>

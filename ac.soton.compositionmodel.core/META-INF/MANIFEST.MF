@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: ac.soton.compositionmodel.core;singleton:=true
+Bundle-Version: 0.0.3.release
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eventb.emf.core;bundle-version="[4.2.1,5.0.0)",
+ org.eclipse.core.runtime;bundle-version="3.12.0",
+ org.eclipse.emf.ecore;bundle-version="2.12.0"
+Bundle-ActivationPolicy: lazy
+Export-Package: ac.soton.compositionmodel.core.compositionmodel,
+ ac.soton.compositionmodel.core.compositionmodel.impl,
+ ac.soton.compositionmodel.core.compositionmodel.util

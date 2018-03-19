@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="tasking.presentation.TaskingModelWizardID"
+            name="%_UI_TaskingModelWizard_label"
+            class="tasking.presentation.TaskingModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TaskingModelFile.gif">
+         <description>%_UI_TaskingModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="tasking.presentation.TaskingEditorID"
+            name="%_UI_TaskingEditor_label"
+            icon="icons/full/obj16/TaskingModelFile.gif"
+            extensions="tasking"
+            class="tasking.presentation.TaskingEditor"
+            contributorClass="tasking.presentation.TaskingActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

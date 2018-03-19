@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Reasoners
+Bundle-SymbolicName: ac.soton.eventb.reasoners
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eventb.core.ast;bundle-version="3.3.0",
+ org.eventb.core.seqprover;bundle-version="3.2.0"
+Export-Package: ac.soton.eventb.reasoners

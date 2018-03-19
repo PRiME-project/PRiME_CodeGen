@@ -1,0 +1,11 @@
+Notes:
+
+=====
+org.eventb.codegen.il1.translator.core
+
+Provided here are abstract classes that we believe to be the basic required translations for each type, which might be useful for new translators. 
+You can use these then do any required transformations of the translations to the target language.
+
+If they don't do the job required for a particular language, extend the AbstractIL1Translator element directly.
+
+==

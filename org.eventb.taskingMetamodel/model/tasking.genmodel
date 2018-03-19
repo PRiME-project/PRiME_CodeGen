@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014,2016 University of Southampton.&#xD;All rights reserved. This program and the accompanying materials  are made&#xD;available under the terms of the Eclipse Public License v1.0 which accompanies this &#xD;distribution, and is available at http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/org.eventb.taskingMetamodel/src" modelPluginID="org.eventb.taskingMetamodel"
+    templateDirectory="/org.eventb.emf.core/templates" dynamicTemplates="true" modelName="Tasking"
+    importerID="org.eclipse.emf.importer.ecore" containmentProxies="true" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../org.eventb.compositeControlMetamodel/model/compositeControl.genmodel#//compositeControl platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eventb.emf.core/model/eventbcore.genmodel#//core ../../ac.soton.compositionmodel.core/model/compositionmodelcore.genmodel#//compositionmodel">
+  <foreignModel>tasking.ecore</foreignModel>
+  <genPackages prefix="Tasking" disposableProviderFactory="true" extensibleProviderFactory="true"
+      childCreationExtenders="true" ecorePackage="tasking.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tasking.ecore#//TaskTypeEnum">
+      <genEnumLiterals ecoreEnumLiteral="tasking.ecore#//TaskTypeEnum/Repeating"/>
+      <genEnumLiterals ecoreEnumLiteral="tasking.ecore#//TaskTypeEnum/Triggered"/>
+      <genEnumLiterals ecoreEnumLiteral="tasking.ecore#//TaskTypeEnum/OneShot"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tasking.ecore#//ImplementationTypeEnum">
+      <genEnumLiterals ecoreEnumLiteral="tasking.ecore#//ImplementationTypeEnum/ProcedureDef"/>
+      <genEnumLiterals ecoreEnumLiteral="tasking.ecore#//ImplementationTypeEnum/ProcedureSynch"/>
+      <genEnumLiterals ecoreEnumLiteral="tasking.ecore#//ImplementationTypeEnum/Loop"/>
+      <genEnumLiterals ecoreEnumLiteral="tasking.ecore#//ImplementationTypeEnum/Branch"/>
+      <genEnumLiterals ecoreEnumLiteral="tasking.ecore#//ImplementationTypeEnum/Sensing"/>
+      <genEnumLiterals ecoreEnumLiteral="tasking.ecore#//ImplementationTypeEnum/Actuating"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tasking.ecore#//ParameterTypeEnum">
+      <genEnumLiterals ecoreEnumLiteral="tasking.ecore#//ParameterTypeEnum/in"/>
+      <genEnumLiterals ecoreEnumLiteral="tasking.ecore#//ParameterTypeEnum/out"/>
+      <genEnumLiterals ecoreEnumLiteral="tasking.ecore#//ParameterTypeEnum/local"/>
+    </genEnums>
+    <genClasses ecoreClass="tasking.ecore#//Main">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tasking.ecore#//Main/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tasking.ecore#//Main/mainBody"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tasking.ecore#//Main/machines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tasking.ecore#//Main/contexts"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="tasking.ecore#//Task">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tasking.ecore#//Task/taskType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tasking.ecore#//Task/priority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tasking.ecore#//Task/taskBody"/>
+    </genClasses>
+    <genClasses ecoreClass="tasking.ecore#//AutoTask_Machine"/>
+    <genClasses ecoreClass="tasking.ecore#//Tasking_Machine"/>
+    <genClasses ecoreClass="tasking.ecore#//Environ_Machine"/>
+    <genClasses ecoreClass="tasking.ecore#//FMU_Machine"/>
+    <genClasses ecoreClass="tasking.ecore#//Shared_Machine"/>
+    <genClasses ecoreClass="tasking.ecore#//Implementation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tasking.ecore#//Implementation/implementationType"/>
+    </genClasses>
+    <genClasses ecoreClass="tasking.ecore#//ParameterType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tasking.ecore#//ParameterType/parameterType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="tasking.ecore#//TaskType"/>
+    <genClasses ecoreClass="tasking.ecore#//SimpleTaskType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tasking.ecore#//SimpleTaskType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="tasking.ecore#//PeriodicTaskType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tasking.ecore#//PeriodicTaskType/period"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="tasking.ecore#//Sensor"/>
+    <genClasses ecoreClass="tasking.ecore#//AddressedVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tasking.ecore#//AddressedVariable/base"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tasking.ecore#//AddressedVariable/address"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="tasking.ecore#//TaskingElement"/>
+    <genClasses image="false" ecoreClass="tasking.ecore#//AbstractExtensionTaskingElement"/>
+    <genClasses image="false" ecoreClass="tasking.ecore#//EventBElementTaskingElement"/>
+    <genClasses image="false" ecoreClass="tasking.ecore#//MachineType"/>
+    <genClasses ecoreClass="tasking.ecore#//Typing"/>
+  </genPackages>
+</genmodel:GenModel>

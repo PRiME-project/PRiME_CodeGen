@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/org/eventb/codegen/il1/translator/IL1TranslationManager.java=UTF-8
+encoding//src/org/eventb/codegen/il1/translator/ada/AdaOutputIL1Translator.java=UTF-8
+encoding//src/org/eventb/codegen/il1/translator/c/OLD/CVariableIL1Translator.java=UTF-8
+encoding//src/org/eventb/codegen/il1/translator/primecpp/PrimeCppConstantTranslator.java=UTF-8
+encoding//src/org/eventb/codegen/il1/translator/primecpp/PrimeCppIfTranslator.java=UTF-8

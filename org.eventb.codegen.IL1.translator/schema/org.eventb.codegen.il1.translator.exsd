@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.eventb.codegen.IL1.translator" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="org.eventb.codegen.IL1.translator" id="org.eventb.codegen.il1.translator" name="org.eventb.codegen.il1.translator"/>
+      </appinfo>
+      <documentation>
+         [Enter description of this extension point.]
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="emfPackage"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="emfPackage">
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="il1Translator"/>
+         </sequence>
+         <attribute name="SourceName" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="nsURISource" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="il1Translator">
+      <complexType>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  optional user friendly name for this part of the extension
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="IL1TranslatorClass" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The fully qualified name of a class that extends AbstractIL1Translator and will do the translation for the given tasking element.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn="org.eventb.codegen.il1.translator.AbstractIL1Translator:"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="sourceClass" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="coreTargetLanguage" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Either C or Ada
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="specificTargetLanguage" type="string" use="default" value="Default">
+            <annotation>
+               <documentation>
+                  Any specifics about the language being translated.
+Eg. it is a particular implementation of a language, or that it is using a particular library. 
+
+Eg. C can be generated using either an OpenMP or PThreads implementation
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

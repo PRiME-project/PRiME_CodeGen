@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014,2016 University of Southampton.&#xD;All rights reserved. This program and the accompanying materials  are made&#xD;available under the terms of the Eclipse Public License v1.0 which accompanies this &#xD;distribution, and is available at http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/org.eventb.codegen.IL1.core/src" modelPluginID="org.eventb.codegen.IL1.core"
+    modelName="IL1" importerID="org.eclipse.emf.importer.ecore" containmentProxies="true"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../org.eventb.emf.core/model/eventbcore.genmodel#//core">
+  <foreignModel>IL1.ecore</foreignModel>
+  <genPackages prefix="Il1" basePackage="org.eventb.codegen" disposableProviderFactory="true"
+      ecorePackage="IL1.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="IL1.ecore#//TaskTypeEnum">
+      <genEnumLiterals ecoreEnumLiteral="IL1.ecore#//TaskTypeEnum/Repeating"/>
+      <genEnumLiterals ecoreEnumLiteral="IL1.ecore#//TaskTypeEnum/Triggered"/>
+      <genEnumLiterals ecoreEnumLiteral="IL1.ecore#//TaskTypeEnum/OneShot"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="IL1.ecore#//VariableTypeEnum">
+      <genEnumLiterals ecoreEnumLiteral="IL1.ecore#//VariableTypeEnum/Variable"/>
+      <genEnumLiterals ecoreEnumLiteral="IL1.ecore#//VariableTypeEnum/Parameter"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="IL1.ecore#//ParamModeEnum">
+      <genEnumLiterals ecoreEnumLiteral="IL1.ecore#//ParamModeEnum/in"/>
+      <genEnumLiterals ecoreEnumLiteral="IL1.ecore#//ParamModeEnum/out"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="IL1.ecore#//Declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Declaration/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Declaration/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Declaration/initialValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Declaration/ProjectName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Declaration/ComponentName"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//VariableDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//VariableDecl/address"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//ConstantDecl"/>
+    <genClasses ecoreClass="IL1.ecore#//FormalParamDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//FormalParamDecl/mode"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="IL1.ecore#//CallTarget"/>
+    <genClasses ecoreClass="IL1.ecore#//Protected">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Protected/subroutines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Protected/decls"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Protected/projectName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Protected/machineName"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//Task">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Task/taskType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Task/priority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Task/decls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Task/subroutines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Task/projectName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Task/machineName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="IL1.ecore#//CodeContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//CodeContainer/body"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//Program">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Program/decls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Program/protected"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Program/entryPoint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Program/taskTypeTasks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Program/subroutines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Program/environMachines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Program/projectName"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//MainEntry">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//MainEntry/autoTasks"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//Subroutine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Subroutine/formalParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Subroutine/localDeclarations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Subroutine/machineName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute IL1.ecore#//Subroutine/guards"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Subroutine/projectName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="IL1.ecore#//Command">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Command/ParentEventName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Command/envirStateMachineChild"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//PreconditionLoop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//PreconditionLoop/command"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute IL1.ecore#//PreconditionLoop/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//Seq">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Seq/leftBranch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Seq/rightBranch"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//Action">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Action/command"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Action/action"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//Assignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute IL1.ecore#//Assignment/updated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute IL1.ecore#//Assignment/value"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//Switch">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute IL1.ecore#//Switch/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Switch/switchBlocks"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//Call">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference IL1.ecore#//Call/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference IL1.ecore#//Call/subroutine"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//Call/actualParameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Call/machineName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Call/projectName"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//If">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute IL1.ecore#//If/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//If/branch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//If/else"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference IL1.ecore#//If/relatedEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//ElseIf">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute IL1.ecore#//ElseIf/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//ElseIf/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//ElseIf/branch"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference IL1.ecore#//ElseIf/relatedEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//ElseIf/envirStateMachineChild"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//SwitchBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//SwitchBlock/test"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//SwitchBlock/action"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="IL1.ecore#//Signature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Signature/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="IL1.ecore#//TaskType"/>
+    <genClasses ecoreClass="IL1.ecore#//SimpleTaskType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//SimpleTaskType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//EnvironTask"/>
+    <genClasses ecoreClass="IL1.ecore#//PeriodicTaskType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//PeriodicTaskType/period"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//Output">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Output/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Output/element"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//IL1Element"/>
+    <genClasses ecoreClass="IL1.ecore#//FormulaSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute IL1.ecore#//FormulaSet/conditions"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//ConditionSet"/>
+    <genClasses ecoreClass="IL1.ecore#//CommandSet"/>
+    <genClasses ecoreClass="IL1.ecore#//LocalRemote">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//LocalRemote/localSubroutine"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//LocalRemote/remoteSubroutine"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//InParameter"/>
+    <genClasses ecoreClass="IL1.ecore#//OutParameter"/>
+    <genClasses image="false" ecoreClass="IL1.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Parameter/orderNumber"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//LocalVariable"/>
+    <genClasses ecoreClass="IL1.ecore#//TranslatedDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//TranslatedDecl/type"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//PartiallyTranslatedDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//PartiallyTranslatedDecl/partialInitialisationExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//FullyTranslatedDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//FullyTranslatedDecl/fullInitialisationExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//Enumeration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Enumeration/literalValues"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//Case">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//Case/caseExpression"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference IL1.ecore#//Case/caseStatement"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//CaseStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//CaseStatement/caseValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IL1.ecore#//CaseStatement/command"/>
+    </genClasses>
+    <genClasses ecoreClass="IL1.ecore#//Skip"/>
+    <nestedGenPackages prefix="RequiredFormula" basePackage="org.eventb.codegen.il1"
+        disposableProviderFactory="true" ecorePackage="IL1.ecore#//RequiredFormula">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="IL1.ecore#//RequiredFormula/DataTypeEnum">
+        <genEnumLiterals ecoreEnumLiteral="IL1.ecore#//RequiredFormula/DataTypeEnum/UserSpecifiedDataType"/>
+        <genEnumLiterals ecoreEnumLiteral="IL1.ecore#//RequiredFormula/DataTypeEnum/BooleanDataType"/>
+        <genEnumLiterals ecoreEnumLiteral="IL1.ecore#//RequiredFormula/DataTypeEnum/IntegerDataType"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="IL1.ecore#//RequiredFormula/DataType"/>
+      <genClasses ecoreClass="IL1.ecore#//RequiredFormula/AddressedDeclaration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//RequiredFormula/AddressedDeclaration/numberBase"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//RequiredFormula/AddressedDeclaration/address"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="RequiredMetadata" basePackage="org.eventb.codegen.il1"
+        disposableProviderFactory="true" ecorePackage="IL1.ecore#//RequiredMetadata">
+      <genClasses ecoreClass="IL1.ecore#//RequiredMetadata/SubroutineMetaData">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IL1.ecore#//RequiredMetadata/SubroutineMetaData/temporary"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

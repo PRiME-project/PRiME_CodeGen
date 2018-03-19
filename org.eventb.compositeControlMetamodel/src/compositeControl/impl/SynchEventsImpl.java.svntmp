@@ -1,0 +1,222 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
+ */
+package compositeControl.impl;
+
+import compositeControl.CompositeControlPackage;
+import compositeControl.SynchEvents;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.eventb.emf.core.machine.Event;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Synch Events</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link compositeControl.impl.SynchEventsImpl#getLocalEvent <em>Local Event</em>}</li>
+ *   <li>{@link compositeControl.impl.SynchEventsImpl#getRemoteEvent <em>Remote Event</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class SynchEventsImpl extends EObjectImpl implements SynchEvents {
+	/**
+	 * The cached value of the '{@link #getLocalEvent() <em>Local Event</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocalEvent()
+	 * @generated
+	 * @ordered
+	 */
+	protected Event localEvent;
+
+	/**
+	 * The cached value of the '{@link #getRemoteEvent() <em>Remote Event</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemoteEvent()
+	 * @generated
+	 * @ordered
+	 */
+	protected Event remoteEvent;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SynchEventsImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return CompositeControlPackage.Literals.SYNCH_EVENTS;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Event getLocalEvent() {
+		if (localEvent != null && localEvent.eIsProxy()) {
+			InternalEObject oldLocalEvent = (InternalEObject)localEvent;
+			localEvent = (Event)eResolveProxy(oldLocalEvent);
+			if (localEvent != oldLocalEvent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompositeControlPackage.SYNCH_EVENTS__LOCAL_EVENT, oldLocalEvent, localEvent));
+			}
+		}
+		return localEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Event basicGetLocalEvent() {
+		return localEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLocalEvent(Event newLocalEvent) {
+		Event oldLocalEvent = localEvent;
+		localEvent = newLocalEvent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CompositeControlPackage.SYNCH_EVENTS__LOCAL_EVENT, oldLocalEvent, localEvent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Event getRemoteEvent() {
+		if (remoteEvent != null && remoteEvent.eIsProxy()) {
+			InternalEObject oldRemoteEvent = (InternalEObject)remoteEvent;
+			remoteEvent = (Event)eResolveProxy(oldRemoteEvent);
+			if (remoteEvent != oldRemoteEvent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompositeControlPackage.SYNCH_EVENTS__REMOTE_EVENT, oldRemoteEvent, remoteEvent));
+			}
+		}
+		return remoteEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Event basicGetRemoteEvent() {
+		return remoteEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRemoteEvent(Event newRemoteEvent) {
+		Event oldRemoteEvent = remoteEvent;
+		remoteEvent = newRemoteEvent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CompositeControlPackage.SYNCH_EVENTS__REMOTE_EVENT, oldRemoteEvent, remoteEvent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case CompositeControlPackage.SYNCH_EVENTS__LOCAL_EVENT:
+				if (resolve) return getLocalEvent();
+				return basicGetLocalEvent();
+			case CompositeControlPackage.SYNCH_EVENTS__REMOTE_EVENT:
+				if (resolve) return getRemoteEvent();
+				return basicGetRemoteEvent();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case CompositeControlPackage.SYNCH_EVENTS__LOCAL_EVENT:
+				setLocalEvent((Event)newValue);
+				return;
+			case CompositeControlPackage.SYNCH_EVENTS__REMOTE_EVENT:
+				setRemoteEvent((Event)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case CompositeControlPackage.SYNCH_EVENTS__LOCAL_EVENT:
+				setLocalEvent((Event)null);
+				return;
+			case CompositeControlPackage.SYNCH_EVENTS__REMOTE_EVENT:
+				setRemoteEvent((Event)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case CompositeControlPackage.SYNCH_EVENTS__LOCAL_EVENT:
+				return localEvent != null;
+			case CompositeControlPackage.SYNCH_EVENTS__REMOTE_EVENT:
+				return remoteEvent != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //SynchEventsImpl

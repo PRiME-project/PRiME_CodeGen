@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/org/eventb/codegen/tasking/translation/EventTaskingTranslator.java=UTF-8
+encoding//src/org/eventb/codegen/tasking/translation/EventWrapperTaskingTranslator.java=UTF-8
+encoding//src/org/eventb/codegen/tasking/translation/MachineTaskingTranslator.java=UTF-8
+encoding//src/org/eventb/codegen/tasking/translation/eventb/DoEventBTranslator.java=UTF-8
+encoding//src/org/eventb/codegen/tasking/translation/eventb/EventBTranslatorHelpers.java=UTF-8
+encoding//src/org/eventb/codegen/tasking/translation/eventb/EventWrapperEventBTranslator.java=UTF-8

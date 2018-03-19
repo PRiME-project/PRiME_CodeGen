@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eventb.codegen.il1.presentation.Il1ModelWizardID"
+            name="%_UI_Il1ModelWizard_label"
+            class="org.eventb.codegen.il1.presentation.Il1ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Il1ModelFile.gif">
+         <description>%_UI_Il1ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eventb.codegen.il1.presentation.Il1EditorID"
+            name="%_UI_Il1Editor_label"
+            icon="icons/full/obj16/Il1ModelFile.gif"
+            extensions="il1"
+            class="org.eventb.codegen.il1.presentation.Il1Editor"
+            contributorClass="org.eventb.codegen.il1.presentation.Il1ActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eventb.codegen.il1.RequiredFormula.presentation.RequiredFormulaModelWizardID"
+            name="%_UI_RequiredFormulaModelWizard_label"
+            class="org.eventb.codegen.il1.RequiredFormula.presentation.RequiredFormulaModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RequiredFormulaModelFile.gif">
+         <description>%_UI_RequiredFormulaModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eventb.codegen.il1.RequiredFormula.presentation.RequiredFormulaEditorID"
+            name="%_UI_RequiredFormulaEditor_label"
+            icon="icons/full/obj16/RequiredFormulaModelFile.gif"
+            extensions="requiredformula"
+            class="org.eventb.codegen.il1.RequiredFormula.presentation.RequiredFormulaEditor"
+            contributorClass="org.eventb.codegen.il1.RequiredFormula.presentation.RequiredFormulaActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eventb.codegen.il1.RequiredMetadata.presentation.RequiredMetadataModelWizardID"
+            name="%_UI_RequiredMetadataModelWizard_label"
+            class="org.eventb.codegen.il1.RequiredMetadata.presentation.RequiredMetadataModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RequiredMetadataModelFile.gif">
+         <description>%_UI_RequiredMetadataModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eventb.codegen.il1.RequiredMetadata.presentation.RequiredMetadataEditorID"
+            name="%_UI_RequiredMetadataEditor_label"
+            icon="icons/full/obj16/RequiredMetadataModelFile.gif"
+            extensions="requiredmetadata"
+            class="org.eventb.codegen.il1.RequiredMetadata.presentation.RequiredMetadataEditor"
+            contributorClass="org.eventb.codegen.il1.RequiredMetadata.presentation.RequiredMetadataActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

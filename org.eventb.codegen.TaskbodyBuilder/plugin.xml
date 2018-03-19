@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="ac.soton.eventb.roseEditor.editorID">
+            
+         <!-- property sections in the 'Overview' tab - common -->
+         <propertySection
+               id="tasking.taskbody"
+               tab="common.tab.overview"
+               filter="org.eventb.codegen.roseExtension.TaskbodyEditorPropertySection"
+               class="org.eventb.codegen.roseExtension.TaskbodyEditorPropertySection">
+         </propertySection>
+      </propertySections>
+   </extension>
+
+
+</plugin>

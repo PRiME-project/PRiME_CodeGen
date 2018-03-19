@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="ac.soton.compositionmodel.persistence" name="CM Persistency synchronisers" schema="schema/ac.soton.compositionmodel.persistence.exsd"/>
+   <extension
+         point="org.eventb.emf.persistence.synchroniser">
+      <emfPackage
+            name="CompositionmodelPackage"
+            nsURI="http://compositionmodel.soton.ac/models/core">
+         <synchroniser
+               emf_class="ComposedMachine"
+               name="ComposedMachine"
+               rodin_id="ac.soton.composition.core.composedMachineFile"
+               synchroniser_class="ac.soton.compositionmodel.persistence.synchroniser.ComposedMachineSynchroniser">
+         </synchroniser>
+         <synchroniser
+               emf_class="ComposedEvent"
+               name="ComposedEvent"
+               rodin_id="ac.soton.composition.core.composesEvent"
+               synchroniser_class="ac.soton.compositionmodel.persistence.synchroniser.ComposedEventSynchroniser">
+         </synchroniser>
+         <synchroniser
+               emf_class="IncludedMachine"
+               name="IncludedMachine"
+               rodin_id="ac.soton.composition.core.includeMachine"
+               synchroniser_class="ac.soton.compositionmodel.persistence.synchroniser.IncludedMachineSynchroniser">
+         </synchroniser>
+         <synchroniser
+               emf_class="CombinedEventMachine"
+               name="CombinedEventMachine"
+               rodin_id="ac.soton.composition.core.combinedEventMachine"
+               synchroniser_class="ac.soton.compositionmodel.persistence.synchroniser.CombinedEventMachineSynchroniser">
+         </synchroniser>
+         <synchroniser
+               emf_class="Invariant"
+               name="Invariant"
+               rodin_id="org.eventb.core.invariant"
+               synchroniser_class="ac.soton.compositionmodel.persistence.synchroniser.CMInvariantSynchroniser">
+         </synchroniser>
+      </emfPackage>
+   </extension>
+
+</plugin>

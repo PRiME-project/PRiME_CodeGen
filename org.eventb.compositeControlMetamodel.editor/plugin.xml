@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="compositeControl.presentation.CompositeControlModelWizardID"
+            name="%_UI_CompositeControlModelWizard_label"
+            class="compositeControl.presentation.CompositeControlModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CompositeControlModelFile.gif">
+         <description>%_UI_CompositeControlModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="compositeControl.presentation.CompositeControlEditorID"
+            name="%_UI_CompositeControlEditor_label"
+            icon="icons/full/obj16/CompositeControlModelFile.gif"
+            extensions="compositecontrol"
+            class="compositeControl.presentation.CompositeControlEditor"
+            contributorClass="compositeControl.presentation.CompositeControlActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

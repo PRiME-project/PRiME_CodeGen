@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.eventb.codegen.tasking" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="org.eventb.codegen.tasking" id="org.eventb.codegen.tasking.translator" name="Tasking translators"/>
+      </appinfo>
+      <documentation>
+         Defines a collection of tasking translator mappings to be used for translating tasking developments to an IL1 model.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="emfPackage"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  optional user friendly name for this part of the extension
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="emfPackage">
+      <annotation>
+         <documentation>
+            Defines an EMF package and a set of sychronisations for the emf classes that package contains.
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="taskingTranslator"/>
+         </sequence>
+         <attribute name="nsURISource" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  For commenting and user use only
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="TargetOutput" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <enumeration value="IL1">
+                  </enumeration>
+                  <enumeration value="EventB">
+                  </enumeration>
+               </restriction>
+            </simpleType>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="taskingTranslator">
+      <complexType>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  optional user friendly name for this part of the extension
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="taskingTranslatorClass" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The fully qualified name of a class that extends AbstractTaskingTranslator and will do the translation for the given tasking element.
+e.g. org.eventb.emf.persistence.synchroniser.AutoTaskMachineTranslator
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn="org.eventb.codegen.tasking.translation.AbstractTaskingTranslator:"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="sourceClass" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

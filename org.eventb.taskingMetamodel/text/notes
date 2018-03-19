@@ -1,0 +1,20 @@
+Child Creation Extenders = true
+Extensible Provider Factory = true
+
+==========================================================================================
+
+/org.eventb.taskingMetamodel.editor/src/tasking/presentation/TaskingActionBarContributor.java
+
+AMMEND the selection changed:
+
+public void selectionChanged(SelectionChangedEvent event) {
+		if(PrettyPrintViewer.viewer != null){
+			PrettyPrintViewer.viewer.updateContents(event);
+		}
+		....
+		
+		
+==========================================================================================
+	Don't forget !!! Include models in the build, check in build page of plugin.xml
+	
+==========================================================================================				
