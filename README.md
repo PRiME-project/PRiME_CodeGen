@@ -19,11 +19,11 @@ Salehi Fathabadi, Asieh, Butler, Michael J., Yang, Sheng, Maeda-Nunez, Luis, Ban
 
 ## Installation
 
-The code generation plugin works with Rodin v3.3. To install a Rodin plugin you can use Eclipse Update Manager.
+The code generation plugin works with [Rodin v3.3](https://sourceforge.net/projects/rodin-b-sharp/files/Core_Rodin_Platform/3.3/). To install a Rodin plugin you can use Eclipse Update Manager.
 
 The code generation plugin can be installed as follows:
 
-1- Download the plugin from [release section]() of this repository.
+1- Download the plugin (PRiME-CodeGen.zip) from [release section](https://github.com/PRiME-project/PRiME_CodeGen/releases) of this repository.
 
 2- Open Rodin framework and go to Help > Install New Software...
 
